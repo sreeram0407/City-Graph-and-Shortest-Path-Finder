@@ -1,35 +1,41 @@
-# City Graph and Shortest Path Finder 🌐
+# City Graph & Shortest Path Finder
 
-## Author: Sreeram Kondapalli 🧑‍💻
+A C++ implementation of Dijkstra’s algorithm for weighted city graphs. It uses adjacency lists and a minimum priority queue to find shortest paths from a selected source city.
 
-### Description 📜
+## Build and run
 
-This project represents a **graph of cities** and their interconnections, allowing for the determination of the shortest paths between cities using **Dijkstra’s algorithm**. The code is diligently crafted in C++, focusing on object-oriented principles and modular programming paradigms.
+From the repository root:
 
-### Features 🌟
+```bash
+g++ -std=c++11 main.cpp -o city_paths
+./city_paths
+```
 
-- **Header Inclusions and Namespace** 📚
-   - Essential headers and namespaces are integrated for smooth functionality.
-   
-- **Function Prototypes** 🛠
-   - Functions such as `getCityInfo` and `getArrCityInfo` are pre-declared.
-   
-- **Main Function** 🚀
-   - Orchestrates the primary logic flow, involving city and distance processing.
-   
-- **Function Definitions** 🔍
-   - Detailed functions to dissect and process user inputs and graph information.
-   
-- **User Interaction** 💬
-   - Engaging user prompts allowing for easy navigation and utilization of the functionalities.
+## Input format
 
-### How to Run 🚀
+1. Enter the number of cities.
+2. Enter one adjacency-list line per city: `City,Neighbor(distance),...`.
+3. Enter the source city.
+4. Enter `yes` to query another source, or `no` to finish.
 
-1. Ensure all dependencies, including the `"Graph.h"` header, are correctly configured. 🧩
-2. Compile the C++ code. 🔧
-3. Launch the executable and interact via the console, plunging into a world of city graphs and shortest paths exploration! 🖥
+Use a trailing comma on every adjacency-list line. Example:
 
-### Future Development 🚀
+```text
+3
+A,B(5),C(12),
+B,A(5),C(3),
+C,A(12),B(3),
+A
+no
+```
 
-- 🛠 **Enhanced Error Handling**: Making the application more resilient and user-proof.
-- 🖥 **UI/UX Improvements**: Revamping user interactions for an enhanced, intuitive experience.
+The program prints the graph and shortest-path results. Use nonnegative edge weights for Dijkstra’s algorithm.
+
+## Files
+
+- [main.cpp](main.cpp): graph input and interactive source selection.
+- [Graph.h](Graph.h): graph representation and Dijkstra’s algorithm.
+- [ArrivalCityList.h](ArrivalCityList.h): adjacency lists.
+- [MinPriorityQueue.h](MinPriorityQueue.h): priority queue.
+
+**Author:** Sreeram Kondapalli
